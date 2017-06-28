@@ -4,6 +4,7 @@ Resumo do curso:
 
 https://www.schoolofnet.com/curso-orientacao-objetos-com-c/
 
+
 ---
 
 ## <a name="indice">Índice</a>
@@ -34,11 +35,67 @@ https://www.schoolofnet.com/curso-orientacao-objetos-com-c/
 
 ## <a name="parte1">Introdução</a>
 
+Material de Referência: (Apostila Caelum c#)[https://www.caelum.com.br/apostila-csharp-orientacao-objetos/]
+
+
+
+
+
 [Voltar ao Índice](#indice)
 
 ---
 
 ## <a name="parte2">Cenário Classes</a>
+
+ContaCorrente.cs
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    public class ContaCorrente
+    {
+        private int agencia;
+        private int numeroCOnta;
+        private decimal saldo;
+
+        public void Sacar(decimal valor)
+        {
+            if (saldo >= valor)
+            {
+                saldo -= valor;
+            }
+            else
+            {
+                //mesagem
+            }
+            
+        }
+
+        public void Depositar(decimal valor)
+        {
+            saldo += valor;
+        }
+    }
+}
+```
+
+Programa.cc
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ContaCorrente cc = new ContaCorrente();
+            cc.Depositar(100);
+        }
+    }
+}
+```
 
 [Voltar ao Índice](#indice)
 
