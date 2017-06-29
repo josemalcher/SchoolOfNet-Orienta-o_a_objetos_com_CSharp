@@ -109,6 +109,145 @@ namespace CSharpOO
 
 ## <a name="parte4">Encapsulamento 2</a>
 
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    public class ContaCorrente
+    {
+        private int numeroConta;
+        private decimal saldo;
+
+
+        private int agencia;
+        public ContaCorrente()
+        {
+            agencia = 44512;
+        }
+
+        public int Agencia
+        {
+            get { return agencia; }
+            private set
+            {
+                agencia = value;
+            }
+        }
+
+        public void SetAgencia(int agencia)
+        {
+            this.agencia = agencia;
+        }
+
+        public void Sacar(decimal valor)
+        {
+            if (saldo >= valor)
+            {
+                saldo -= valor;
+            }
+            else
+            {
+                Console.WriteLine("Hello World!");
+            }
+        }
+
+        public void Depositar(decimal valor)
+        {
+            saldo += valor;
+        }
+    }
+}
+
+```
+
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ContaCorrente cc = new ContaCorrente();
+            //cc.Agencia = 1;
+            cc.SetAgencia(33);
+            Console.WriteLine(cc.Agencia);
+
+            Console.Read();
+        }
+    }
+}
+```
+
+(Encapsulamento e Modificadores de Acesso)[https://www.caelum.com.br/apostila-csharp-orientacao-objetos/encapsulamento-e-modificadores-de-acesso/]
+
+A partir do C# 3.0, temos as propriedades que são implementadas automaticamente pelo compilador, as auto-implemented properties. Para declararmos uma auto-implemented property para expor o número da conta, utilizamos o seguinte código:
+
+```csharp
+class Conta
+{
+    // outras propriedades
+    
+    // get é público e pode ser acessado por qualquer classe
+    // set é privado e por isso só pode ser usado pela conta.
+    public double Saldo { get; private set; }
+    
+    // resto do código da classe.
+}
+```
+ podemos deixar a classe AtualizadorDeContas ou o método Atualiza com visibilidade internal:
+
+ ```csharp
+ // internal é a visibilidade padrão para a classe,
+// portanto a palavra internal é opcional
+internal class AtualizadorDeContas
+{
+    // implementação da classe
+}
+```
+
+(Construtores)[https://www.caelum.com.br/apostila-csharp-orientacao-objetos/construtores/]
+
+```csharp
+class Cliente 
+{
+    public string Nome { get; set; }
+    
+    public int Idade { get; set; }
+    
+    // construtor que só recebe o nome
+    public Cliente (string nome)
+    {
+        this.Nome = nome;
+    }
+    // construtor que recebe o nome e a idade
+    public Cliente (string nome, int idade)
+    {
+        this.Nome = nome;
+        this.Idade = idade;
+    }
+}
+```
+
+### Initializer
+
+Para evitar essa repetição, podemos utilizar os initializers do C#. O Initializer é um bloco de código que serve para inicializar as propriedades públicas do objeto.
+
+```csharp
+Cliente cliente = new Cliente ("Victor Harada")
+{
+    // bloco de inicialização
+    Cpf = "123.456.789-01",
+    Rg = "21.345.987-x",
+    Idade = 25
+};
+```
+
+
+
+
 [Voltar ao Índice](#indice)
 
 ---

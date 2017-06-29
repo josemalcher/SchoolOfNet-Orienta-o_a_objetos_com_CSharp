@@ -4,9 +4,33 @@ namespace CSharpOO
 {
     public class ContaCorrente
     {
-        private int agencia;
-        private int numeroCOnta;
+        private int numeroConta;
         private decimal saldo;
+
+
+        private int agencia;
+        public ContaCorrente()
+        {
+            agencia = 44512;
+        }
+
+        public int Agencia
+        {
+            get { return agencia; }
+            private set
+            {
+                agencia = value;
+            }
+        }
+
+        public void SetAgencia(int agencia)
+        {
+            this.agencia = agencia;
+        }
+
+        
+
+
 
         public void Sacar(decimal valor)
         {
