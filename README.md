@@ -254,6 +254,99 @@ Cliente cliente = new Cliente ("Victor Harada")
 
 ## <a name="parte5">Herança Conceito</a>
 
+[Herança](https://www.caelum.com.br/apostila-csharp-orientacao-objetos/heranca/)
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpOO
+{
+    class Conta
+    {
+        public int NumeroConta { get; }
+        private decimal saldo;
+
+        private int agencia;
+
+        public int Agencia
+        {
+            get { return agencia; }
+            private set
+            {
+                agencia = value;
+            }
+        }
+
+        public void SetAgencia(int agencia)
+        {
+            this.agencia = agencia;
+        }
+
+        public void Sacar(decimal valor)
+        {
+            if (saldo >= valor)
+            {
+                saldo -= valor;
+            }
+            else
+            {
+                Console.WriteLine("Hello World!");
+            }
+
+        }
+
+        public void Depositar(decimal valor)
+        {
+            saldo += valor;
+        }
+    }
+}
+
+```
+
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    public class ContaCorrente : Conta
+    {
+        private decimal taxaMovimento;
+    }
+}
+```
+
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //ContaCorrente cc = new ContaCorrente();
+            ////cc.Agencia = 1;
+            //cc.SetAgencia(33);
+            //Console.WriteLine(cc.Agencia);
+
+            ContaCorrente cc = new ContaCorrente();
+
+            ContaPoupanca cp = new ContaPoupanca();
+
+
+            cc.SetAgencia(1234);
+            cp.Depositar(100);
+
+            Console.Read();
+        }
+    }
+}
+```
+
+
 [Voltar ao Índice](#indice)
 
 ---
