@@ -359,6 +359,84 @@ namespace CSharpOO
 
 ## <a name="parte7">Herança Construtor</a>
 
+Conta.cs
+```csharp
+     public Conta()
+        {
+            this.Limite = 1000;
+        }
+        public Conta(decimal limite)
+        {
+            this.Limite = limite;
+        }
+```
+
+ContaCorrente.cs
+
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    public class ContaCorrente : Conta
+    {
+        private decimal taxaMovimento;
+
+        public decimal TaxaMovimento
+        {
+            get { return taxaMovimento; }
+            set { taxaMovimento = value; }
+        }
+
+        public ContaCorrente() : base(3000)
+        {
+            this.TaxaMovimento = 0.1m;
+        }
+
+        
+    }
+
+}
+```
+ContaPoupanca.cs
+```csharp
+namespace CSharpOO
+{
+    public class ContaPoupanca : Conta
+    {
+        public ContaPoupanca() : base(500)
+        {
+            
+        }
+    }
+}
+```
+
+Program.cs
+
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ContaCorrente cc = new ContaCorrente();
+            ContaPoupanca cp = new ContaPoupanca();
+
+           //Console.WriteLine(cc.TaxaMovimento);
+            Console.WriteLine(cc.Limite);
+            Console.WriteLine(cp.Limite);
+
+            Console.Read();
+        }
+    }
+}
+```
+
+
 [Voltar ao Índice](#indice)
 
 ---

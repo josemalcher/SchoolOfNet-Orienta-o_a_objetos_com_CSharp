@@ -12,12 +12,11 @@ namespace CSharpOO
             //Console.WriteLine(cc.Agencia);
 
             ContaCorrente cc = new ContaCorrente();
-
             ContaPoupanca cp = new ContaPoupanca();
 
-
-            cc.SetAgencia(1234);
-            cp.Depositar(100);
+            Console.WriteLine(cc.TaxaMovimento);
+            Console.WriteLine(cc.Limite);
+            Console.WriteLine(cp.Limite);
 
             Console.Read();
         }
