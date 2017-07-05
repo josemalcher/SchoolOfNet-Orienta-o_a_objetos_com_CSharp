@@ -443,6 +443,57 @@ namespace CSharpOO
 
 ## <a name="parte8">Métodos Virtuais</a>
 
+Conta.cs
+```csharp
+
+        public virtual void Sacar(decimal valor)
+        {
+            if (Saldo >= valor)
+            {
+                Saldo -= valor;
+            }
+            else
+            {
+                Console.WriteLine("Hello World!");
+            }
+
+        }
+
+```
+ContaCorrente.cs
+
+```csharp
+ //public void Sacar(decimal valor)
+        //{
+        //    //this.Saldo -= valor + (this.TaxaMovimento * valor);
+        //    base.Sacar(valor + (this.taxaMovimento * valor));
+        //}
+
+        public override void Sacar(decimal valor)
+        {
+            base.Sacar(valor + (this.taxaMovimento * valor));
+        }
+```
+
+program.cs
+
+```csharp
+ContaCorrente cc = new ContaCorrente();
+            ContaPoupanca cp = new ContaPoupanca();
+
+            cc.Saldo = 1000;
+            cp.Saldo = 1000;
+
+            cc.Sacar(200);
+            cp.Sacar(200);
+
+            Console.WriteLine(cc.Saldo);
+            Console.WriteLine(cp.Saldo);
+
+            Console.Read();
+```
+
+
 [Voltar ao Índice](#indice)
 
 ---

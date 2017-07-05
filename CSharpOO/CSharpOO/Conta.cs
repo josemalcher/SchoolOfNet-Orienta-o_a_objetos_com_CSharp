@@ -21,16 +21,22 @@ namespace CSharpOO
             }
         }
 
+        public decimal Saldo
+        {
+            get { return saldo; }
+            set { saldo = value; }
+        }
+
         public void SetAgencia(int agencia)
         {
             this.agencia = agencia;
         }
 
-        public void Sacar(decimal valor)
+        public virtual void Sacar(decimal valor)
         {
-            if (saldo >= valor)
+            if (Saldo >= valor)
             {
-                saldo -= valor;
+                Saldo -= valor;
             }
             else
             {
@@ -41,7 +47,7 @@ namespace CSharpOO
 
         public void Depositar(decimal valor)
         {
-            saldo += valor;
+            Saldo += valor;
         }
 
 
