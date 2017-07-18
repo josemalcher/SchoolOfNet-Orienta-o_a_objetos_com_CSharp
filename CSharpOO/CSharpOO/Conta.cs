@@ -6,7 +6,11 @@ namespace CSharpOO
 {
     public class Conta
     {
-        public int NumeroConta { get; set; }
+        public int NumeroConta {
+            get { return NumeroConta; }
+            private set { saldo = value; }
+        }
+
         private decimal saldo;
 
         private int agencia;
@@ -24,7 +28,7 @@ namespace CSharpOO
         public decimal Saldo
         {
             get { return saldo; }
-            set { saldo = value; }
+            private set { saldo = value; }
         }
 
         public void SetAgencia(int agencia)
@@ -50,8 +54,7 @@ namespace CSharpOO
             Saldo += valor;
         }
 
-
-
+        
         public Conta()
         {
             this.Limite = 1000;

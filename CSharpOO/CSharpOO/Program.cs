@@ -9,14 +9,19 @@ namespace CSharpOO
             ContaCorrente cc = new ContaCorrente();
             ContaPoupanca cp = new ContaPoupanca();
 
-            cc.Saldo = 1000;
-            cp.Saldo = 1000;
+            cc.Depositar(1000);
+            cp.Depositar(1000);
 
             cc.Sacar(200);
             cp.Sacar(200);
 
             Console.WriteLine(cc.Saldo);
             Console.WriteLine(cp.Saldo);
+
+            Relatorio relatorio = new Relatorio();
+            relatorio.Somar(cc);
+            relatorio.Somar(cp);
+            Console.WriteLine(relatorio.SaldoGeral);
 
             Console.Read();
         }
