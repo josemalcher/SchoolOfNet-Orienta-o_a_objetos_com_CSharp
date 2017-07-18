@@ -21,6 +21,10 @@ namespace CSharpOO
             Relatorio relatorio = new Relatorio();
             relatorio.Somar(cc);
             relatorio.Somar(cp);
+
+            relatorio.SomarValor(10);
+            relatorio.SomarValor(10,10);
+
             Console.WriteLine(relatorio.SaldoGeral);
 
             Console.Read();
