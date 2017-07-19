@@ -28,7 +28,7 @@ namespace CSharpOO
         public decimal Saldo
         {
             get { return saldo; }
-            private set { saldo = value; }
+            protected set { saldo = value; }
         }
 
         public void SetAgencia(int agencia)
@@ -49,10 +49,7 @@ namespace CSharpOO
 
         }
 
-        public void Depositar(decimal valor)
-        {
-            Saldo += valor;
-        }
+        public abstract void Depositar(decimal valor);
 
         
         public Conta()

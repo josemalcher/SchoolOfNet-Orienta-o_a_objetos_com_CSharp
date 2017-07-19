@@ -610,13 +610,30 @@ namespace CSharpOO
         }
 ```
 
-        
+
 
 [Voltar ao Índice](#indice)
 
 ---
 
 ## <a name="parte12">Métodos Abstratos</a>
+
+```csharp
+      public abstract void Depositar(decimal valor);
+```
+
+ContaCorrente.cs e em ContaPoupanca.cs
+```csharp
+       public override void Depositar(decimal valor)
+        {
+            this.Saldo += valor;
+        }
+```` 
+
+```csharp
+
+````
+
 
 [Voltar ao Índice](#indice)
 

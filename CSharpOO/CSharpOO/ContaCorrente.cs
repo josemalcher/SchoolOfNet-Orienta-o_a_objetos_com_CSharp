@@ -28,7 +28,12 @@ namespace CSharpOO
             base.Sacar(valor + (this.taxaMovimento * valor));
         }
 
-        
+        public override void Depositar(decimal valor)
+        {
+            this.Saldo += valor;
+        }
+
+
     }
 
 }
