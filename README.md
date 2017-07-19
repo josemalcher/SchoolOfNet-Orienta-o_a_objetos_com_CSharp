@@ -641,6 +641,26 @@ ContaCorrente.cs e em ContaPoupanca.cs
 
 ## <a name="parte13">Interface Conceito</a>
 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpOO
+{
+    public interface ITributo
+    {
+        decimal SomarTributo();
+    }
+}
+
+```
+
+
+```chsarp
+
+```
+
 [Voltar ao Índice](#indice)
 
 ---
