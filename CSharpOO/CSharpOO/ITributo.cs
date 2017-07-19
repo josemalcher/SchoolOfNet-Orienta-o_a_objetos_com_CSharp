@@ -6,6 +6,6 @@ namespace CSharpOO
 {
     public interface ITributo
     {
-        decimal SomarTributo();
+        decimal CalcularTributo();
     }
 }

@@ -656,16 +656,98 @@ namespace CSharpOO
 
 ```
 
-
-```chsarp
-
-```
-
 [Voltar ao Índice](#indice)
 
 ---
 
 ## <a name="parte14">Interface Aplicação</a>
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpOO
+{
+    public interface ITributo
+    {
+        decimal CalcularTributo();
+    }
+}
+
+```
+
+ContaPoupanca.cs
+
+```csharp
+using System;
+
+namespace CSharpOO
+{
+    public class ContaPoupanca : Conta, ITributo
+    {
+        public ContaPoupanca() : base(500)
+        {
+            
+        }
+
+        public decimal CalcularTributo()
+        {
+            return base.Saldo * 0.02m;
+        }
+
+        public override void Depositar(decimal valor)
+        {
+            base.Saldo += valor;
+        }
+
+
+    }
+}
+```
+
+Relatorio.cs
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpOO
+{
+    class Relatorio
+    {
+        public decimal SaldoGeral { get; private set; }
+        public decimal TributoGeral { get; private set; }
+
+        public void SomarTributos(ITributo conta)
+        {
+            this.TributoGeral += conta.CalcularTributo(); 
+        }
+
+        public void Somar(Conta conta)
+        {
+            this.SaldoGeral += conta.Saldo;
+        }
+
+        public void SomarValor(decimal valor1)
+        {
+            this.SaldoGeral += valor1;
+        }
+        public void SomarValor(decimal valor1, decimal valor2)
+        {
+            this.SaldoGeral += (valor1 + valor2);
+        }
+    }
+}
+
+```
+Program.cs
+```csharp
+    relatorio.SomarTributos(cp);
+    Console.WriteLine(relatorio.TributoGeral);
+```
+
 
 [Voltar ao Índice](#indice)
 

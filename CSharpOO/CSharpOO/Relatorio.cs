@@ -7,6 +7,12 @@ namespace CSharpOO
     class Relatorio
     {
         public decimal SaldoGeral { get; private set; }
+        public decimal TributoGeral { get; private set; }
+
+        public void SomarTributos(ITributo conta)
+        {
+            this.TributoGeral += conta.CalcularTributo(); 
+        }
 
         public void Somar(Conta conta)
         {
