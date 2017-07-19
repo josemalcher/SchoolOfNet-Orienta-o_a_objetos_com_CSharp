@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpOO
 {
-    public class Conta
+    public abstract class Conta
     {
         public int NumeroConta {
             get { return NumeroConta; }

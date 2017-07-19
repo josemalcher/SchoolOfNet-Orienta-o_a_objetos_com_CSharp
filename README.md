@@ -599,6 +599,19 @@ Program.cs
 
 ## <a name="parte11">Classe Abstrata</a>
 
+```csharp
+namespace CSharpOO
+{
+    public abstract class Conta
+    {
+        public int NumeroConta {
+            get { return NumeroConta; }
+            private set { saldo = value; }
+        }
+```
+
+        
+
 [Voltar ao Índice](#indice)
 
 ---
